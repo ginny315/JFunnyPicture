@@ -39,5 +39,16 @@
 			</tr>
 		</tbody>
 	</table>
+<script type="text/javascript">
+$(document).ready(function(){
+	$.fn.shadow.defaults.copies = 10;
+	$('h1').shadow({
+		copies:3,
+		copyOffset:function(index){
+			return ({x:-index,y:-2*index})
+		}
+	});
+});
+</script>
 </body>
 </html>
