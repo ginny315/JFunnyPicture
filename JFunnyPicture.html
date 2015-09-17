@@ -11,10 +11,13 @@
 	}
 	div img{
 		width: 100%;
+		margin: 0;
+		padding: 0;
+		border:0;
+		underline:0;
 	}
 	.pictureone{
-		width: 30%;
-		position: absolute;
+		width: 50%;
 	}
 
 	</style>
@@ -23,6 +26,13 @@
 	<title>JFunnyPicture</title>
 </head>
 <body>
-	<div class="pictureone"><img src="img/one.jpg"></div>
+	<div class="pictureone"><img src="img/three.jpg"></div>
+<script type="text/javascript">
+	$(document).ready(function(){
+	 	 	 $('img').JFunnyPicture({
+	 	 	 	n:9
+	 	 	 });
+	});
+</script>
 </body>
 </html>
