@@ -28,7 +28,9 @@
 	}
 
 	$.fn.shadow.defaults = {
+		var defaults = {
 			len:5,
-			opciaty:0.2		
+			opciaty:0.2
+		}
 	}
 })(jQuery);
