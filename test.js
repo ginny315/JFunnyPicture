@@ -30,6 +30,4 @@
 	$.fn.shadow.defaults = {
 			len:5,
 			opciaty:0.2		
-	}
-	
 })(jQuery);

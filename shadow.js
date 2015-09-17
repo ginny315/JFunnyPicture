@@ -13,24 +13,22 @@
 */
 (function($){	
 	$.fn.shadow = function(opts){
-		var options = opts | defaults | {};
-		return this.each(function(options){
+		var options = opts || {};
+		return this.each(function(){
 			var $element = $(this);
 			for(var i=0 ; i<options.len ; i++)
 			$element.clone().css({
-				position:absolute,
-				left:$element.offset().left+i,
-				top:$element.offset().right+i,
-				opciaty:options.opciaty
-
-			})
-		})
+				position:'absolute',
+				left:i,
+				top:i,
+				opacity:options.opacity
+			}).insertAfter('h1');
+		console.log("ok");
+		});
 	}
 
 	$.fn.shadow.defaults = {
-		var defaults = {
 			len:5,
 			opciaty:0.2
-		}
 	}
 })(jQuery);
