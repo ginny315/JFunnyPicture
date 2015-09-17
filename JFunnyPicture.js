@@ -1,35 +1,55 @@
-//立即调用的函数表达式
-//扩展全局jQuery对象
-//调用$.a()
- // $.extend({
- // 	a:function(){},
- // 	b:function(){}
- // })
- // 
- // 
-//使用命名空间隔离函数
-//为全局函数创造了一个命名空间
-//可以选择一个自己的全局对象，避免自定义插件与第三方插件发生命名冲突
-//调用$.JFunnyPicture.a()
-//
-// （function($){
-// 	$.JFunnyPicture = {
-// 		a:function(){},
-// 		b:function(){}
-// 	}
-// }）(jQuery);
-// 
-// 添加jQuery对象方法
-//jQuery.fn.JFunnyPicture = function(){}
-(function($){
-	$.fn.JFunnyPicture = function(){
+$(document).ready(function(){
+	 	 	 $('img').on("mouseover",function(){
+	 	 	 	 var that = this;
+	 	 	 	 $(that).css('position','absolute');
+	 	 	 	 var width = that.width/2;
+	 	 	 	 var height = that.height/2;
+	 	 	 	 $('<div></div>').addClass('one_cover_1').css({
+	 	 	 	 	position: 'absolute',
+					width: width,
+					height: height,
+					backgroundColor: '#000',
+					opacity: 0,
+					zIndex :'9999'
+	 	 	 	 }).delay(1000).animate({
+	 	 	 	 	opacity: 0.3,
+	 	 	 	 },3000).insertAfter($(this).parent());
 
-	}
-})
+	 	 	 	 $('<div class="one_cover_2"></div>').css({
+	 	 	 	 	position: 'absolute',
+					width: width,
+					height: height,
+					left:width,
+					backgroundColor: '#000',
+					opacity: 0,
+					zIndex :'9999'
+	 	 	 	 }).delay(1000).animate({
+	 	 	 	 	opacity: 0.5,
+	 	 	 	 },3000).insertAfter($(this).parent());
 
- //jQuery选择符可能会匹配0，1或多个元素，要全部匹配，this.each()进行隐式迭代
- //在对象方法体内，this引用的是第一个jQuery对象，在each中，this引用的是一个DOM元素
- //可以把return this.each()进行方法连缀
+	 	 	 	 $('<div class="one_cover_3"></div>').css({
+	 	 	 	 	position: 'absolute',
+					width: width,
+					height: height,
+					top:height,
+					backgroundColor: '#000',
+					opacity: 0,
+					zIndex :'9999'
+	 	 	 	 }).delay(1000).animate({
+	 	 	 	 	opacity: 0.5,
+	 	 	 	 },3000).insertAfter($(this).parent());
 
- 
-
+	 	 	 	 $('<div class="one_cover_4"></div>').css({
+	 	 	 	 	position: 'absolute',
+					width: width,
+					height: height,
+					left:width,
+					top:height,
+					backgroundColor: '#000',
+					opacity:0,
+					zIndex :'9999'
+	 	 	 	 }).animate({
+	 	 	 	 	opacity:0.8
+	 	 	 	 },3000).insertAfter($(this).parent());
+	 	 	 })
+	 	 });

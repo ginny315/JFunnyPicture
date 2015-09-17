@@ -2,53 +2,28 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<script type="text/javascript" src="test.js"></script>
+	<script type="text/javascript" src="jquery-1.11.3.min.js"></script>
+	<script type="text/javascript" src="shadow.js"></script>
+	<style type="text/css">
+		h1{
+			position: relative;
+		}
+	</style>
 	<title>jQuery test</title>
 </head>
 <body>
-	<table id="inventory">
-		<thead>
-			<tr class="one">
-				<th>Product</th>
-				<th>Quantity</th>
-				<th>Price</th>
-			</tr>
-		</thead>
-		<tfoot>
-			<tr class="two">
-				<td>Total</td>
-				<td></td>
-				<td></td>
-			</tr>
-		</tfoot>
-		<tbody>
-			<tr>
-				<td><a href="span.html" data-tooltip-text="Nutritious and delicious!">Spam</a></td>
-				<td>4</td>
-				<td>2.5</td>
-			</tr>
-			<tr>
-				<td><a href="egg.html" data-tooltip-text="Farm fresh or scrambled!">Egg</a></td>
-				<td>12</td>
-				<td>4.32</td>
-			</tr>
-			<tr>
-				<td><a href="gourmet-span.html" data-tooltip-text="Chef Hermann's recipe.">Gourmet Spam</a></td>
-				<td>14</td>
-				<td>7.89</td>
-			</tr>
-		</tbody>
-	</table>
+<h1>this is a title</h1>
+<p>this a p tag</p>
+<div></div>
 <script type="text/javascript">
-$(document).ready(function(){
-	$.fn.shadow.defaults.copies = 10;
-	$('h1').shadow({
-		copies:3,
-		copyOffset:function(index){
-			return ({x:-index,y:-2*index})
-		}
+	$(document).ready(function(){
+		$('h1').shadow({
+			opacity:0.1,
+			//len:3
+		}).css({
+			color:'red'
+		});
 	});
-});
 </script>
 </body>
 </html>
